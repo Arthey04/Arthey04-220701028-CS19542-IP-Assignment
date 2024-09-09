@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Task Manager</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="client.js"></script>
+    </head>
+    <body>
+        
+        <header>Task Manager</header>
+        <div class="container">
+            <div class="sidebar">
+                <h1>Filters</h1>
+                <ul>
+                    <li id="all" onclick="getAllTasks()">All</li>
+                    <li id="pending" onclick="getPendingTasks()">Pending</li>
+                    <li id="completed" onclick="getCompletedTasks()">Completed</li>
+                </ul>
+            </div>
+            <form  id="form" onSubmit="addTasks()">
+            <div class="main">
+                <div class="add_task">
+                <h1>Add New Task</h1>
+                <div>
+                <input type="text" id="task-title" name="title" placeholder="Task Title">
+                </div> 
+                <div>
+                <textarea id="description" name="description" placeholder="description"></textarea>
+                </div>
+                <input type="date" id="due-date" name="due_date" required>
+                </div>
+                <div>
+                    <button type="submit" >Add task</button>
+                </div>
+               
+                
+            </div>
+         </form>
+        </div>
+        <h1>Tasks</h1>
+        <div id="container">
+        </div>
+        <footer>@2024 Task Manager.All rights reserved</footer>
+    </body>
+</html>
