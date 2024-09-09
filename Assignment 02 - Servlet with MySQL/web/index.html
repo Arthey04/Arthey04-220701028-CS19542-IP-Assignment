@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <!-- Header: Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#add-product">Add Product</a></li>
+                <li><a href="#view-products">View Products</a></li>
+                <li><a href="#search">Search Products</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content Section -->
+    <main>
+        
+         <!-- Search Products -->
+        <section id="search">
+            <h2>Search Products</h2>
+            <input type="text" id="searchQuery" placeholder="Search by name or category" >
+            <button id="searchButton" onClick="searchProducts()">Search</button>
+        </section>
+         
+        <!-- Add Product Form -->
+        <section id="add-product">
+            <h2 id="addProductHeading">Add Product</h2>
+            <h2 id="editProductHeading" style="display:none;">Edit Product</h2>
+            <form id="productForm" onSubmit="addProduct(event)">
+                
+                <input type="hidden" id="id" name="id">
+                
+                <label for="name">Product Name:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" required><br>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required><br>
+
+                <label for="stock">Stock Quantity:</label>
+                <input type="number" id="stock" name="stock" required><br>
+
+               <button type="submit" id="addProductButton" onclick="addProduct(event)">Add Product</button>
+               <button  type="submit" id="editProductButton" style="display:none;" onclick="editProduct(event)">Update Product</button>
+
+            </form>
+        </section>
+
+        <!-- Product List -->
+        <section id="view-products">
+            <h2>Product List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="productList">
+                    <!-- Product items will be dynamically added here -->
+                </tbody>
+            </table>
+        </section>
+
+       
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
