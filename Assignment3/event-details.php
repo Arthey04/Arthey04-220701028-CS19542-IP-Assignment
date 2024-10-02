@@ -30,10 +30,12 @@ include("header.php");
                 $row = $result->fetch_assoc();
                 echo "TITLE: " . $row["title"]. "<br>". " DESCRIPTION: " . $row["description"]. "<br>" ."DATE:"  . $row["date"]. "<br>"." TIME: " . $row["time"]. "<br>". "LOCATION: " . $row["location"]. "<br>"." PRICE: " . $row["price"]. "<br>";
                 
+           if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 0) {
             echo "<form action='ticket-booking.php' method='POST'>";
             echo "<input type='hidden' name='event_id' value='" . htmlspecialchars($id) . "'>";
             echo "<button type='submit' class='book-ticket-btn'>Book Ticket</button>";
             echo "</form>";
+           }
            }
            else{
                echo "0 results";
