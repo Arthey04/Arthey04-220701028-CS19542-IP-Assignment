@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Falling Objects Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Catch the Falling Objects Game</h1>
+    <div id="score">Score: 0</div>
+    <div id="lives">Lives: 3</div>
+    <button id="start-game">Start Game</button>
+    <div class="game-area">
+        <div id="catcher" class="catcher"></div>
+    </div>
+    <div>
+        <label for="falling-speed">Falling Speed (ms): </label>
+        <input type="number" id="falling-speed" value="1000">
+        <button id="apply-settings">Apply Settings</button>
+    </div>
+    <div>
+        <a href="management.html">View Scoreboard</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

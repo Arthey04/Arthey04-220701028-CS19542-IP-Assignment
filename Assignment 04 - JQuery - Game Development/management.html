@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreboard Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Scoreboard</h1>
+    <div id="scoreboard"></div>
+    <div>
+        <a href="index.html">Back to Game</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            displayScoreboard(); 
+        });
+
+        function displayScoreboard() {
+            let scoreboard = JSON.parse(localStorage.getItem("scoreboard") || "[]");
+            $("#scoreboard").empty();
+            scoreboard.forEach((entry, index) => {
+                $("#scoreboard").append(`<p>Player ${index + 1}: ${entry.score} points</p>`);
+            });
+        }
+    </script>
+</body>
+</html>
