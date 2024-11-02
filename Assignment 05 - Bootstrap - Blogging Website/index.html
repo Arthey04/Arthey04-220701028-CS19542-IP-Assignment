@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page with Like and Filter Feature</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        .like-section {
+            margin-top: 10px;
+        }
+        .filter-button {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">TechDigitalStories</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center">Blog Posts</h1>
+    
+    <div class="text-center">
+        <button class="btn btn-secondary filter-button" onclick="filterPosts('all')">All</button>
+        <button class="btn btn-secondary filter-button" onclick="filterPosts('General')">General</button>
+        <button class="btn btn-secondary filter-button" onclick="filterPosts('Lifestyle')">Lifestyle</button>
+        <button class="btn btn-secondary filter-button" onclick="filterPosts('Technology')">Technology</button>
+        <button class="btn btn-secondary filter-button" onclick="filterPosts('Travel')">Travel</button>
+        <button class="btn btn-secondary filter-button" onclick="filterPosts('Food')">Food</button>
+        <button class="btn btn-secondary filter-button" onclick="filterPosts('Health')">Health</button>
+    </div>
+
+    <div id="blogGrid" class="row mt-4">
+        <div class="col-md-4 blog-card" data-category="General" data-id="1">
+            <div class="card mb-4">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Post Image">
+                <div class="card-body">
+                    <h5 class="card-title">General Post 1</h5>
+                    <p class="card-text">This is a short description for the general post 1.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                    <div class="like-section">
+                        <button class="btn btn-light" onclick="addLike('1')"><i class="fas fa-thumbs-up"></i></button>
+                        <span id="like-count-1">0</span> Likes
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 blog-card" data-category="Lifestyle" data-id="2">
+            <div class="card mb-4">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Post Image">
+                <div class="card-body">
+                    <h5 class="card-title">Lifestyle Post 1</h5>
+                    <p class="card-text">This is a short description for lifestyle post 1.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                    <div class="like-section">
+                        <button class="btn btn-light" onclick="addLike('2')"><i class="fas fa-thumbs-up"></i></button>
+                        <span id="like-count-2">0</span> Likes
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 blog-card" data-category="Technology" data-id="3">
+            <div class="card mb-4">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Post Image">
+                <div class="card-body">
+                    <h5 class="card-title">Technology Post 1</h5>
+                    <p class="card-text">This is a short description for technology post 1.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                    <div class="like-section">
+                        <button class="btn btn-light" onclick="addLike('3')"><i class="fas fa-thumbs-up"></i></button>
+                        <span id="like-count-3">0</span> Likes
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 blog-card" data-category="Travel" data-id="4">
+            <div class="card mb-4">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Post Image">
+                <div class="card-body">
+                    <h5 class="card-title">Travel Post 1</h5>
+                    <p class="card-text">This is a short description for travel post 1.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                    <div class="like-section">
+                        <button class="btn btn-light" onclick="addLike('4')"><i class="fas fa-thumbs-up"></i></button>
+                        <span id="like-count-4">0</span> Likes
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 blog-card" data-category="Food" data-id="5">
+            <div class="card mb-4">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Post Image">
+                <div class="card-body">
+                    <h5 class="card-title">Food Post 1</h5>
+                    <p class="card-text">This is a short description for food post 1.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                    <div class="like-section">
+                        <button class="btn btn-light" onclick="addLike('5')"><i class="fas fa-thumbs-up"></i></button>
+                        <span id="like-count-5">0</span> Likes
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 blog-card" data-category="Health" data-id="6">
+            <div class="card mb-4">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Post Image">
+                <div class="card-body">
+                    <h5 class="card-title">Health Post 1</h5>
+                    <p class="card-text">This is a short description for health post 1.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                    <div class="like-section">
+                        <button class="btn btn-light" onclick="addLike('6')"><i class="fas fa-thumbs-up"></i></button>
+                        <span id="like-count-6">0</span> Likes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
